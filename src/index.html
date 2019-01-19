@@ -8,7 +8,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-<body>
-  <app-root></app-root>
+<body onload="traverserLinks()">
+  <a target="_blank" href="http://google.com">Google.com</a>
+  <app-root>
+
+
+  </app-root>
+
+  <script>
+    function traverserLinks(){
+      console.log('LOaded');
+      var links = document.querySelectorAll('a');
+      links.forEach(element => {
+        console.log(element);
+        let c = element;
+        element.onclick = (e)=>{
+          e.preventDefault();
+          console.log(e);
+          console.log(c.href);
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
